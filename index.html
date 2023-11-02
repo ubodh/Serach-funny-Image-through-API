@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Handle</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="container">
+
+        <div class="header">
+            <h1>Search for an image through the API</h1>
+            <label>Enter the text Name</label><br>
+            <input type="text" id="textname">
+        </div>
+        
+
+    <div class="imageDiv">
+        <img src="pic.png" width="200px" height="300px" id="imageChange">
+    </div>
+
+    <button id="search-button">Click me</button>
+</div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#search-button').click(function() {
+                const name = $('#textname').val();
+                $('#imageChange').attr('src', `https://joesch.moe/api/v1/${name}`);
+            });
+        });
+    </script>
+</body>
+</html>
